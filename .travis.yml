@@ -1,4 +1,4 @@
 language: groovy
 
-install:
-  - gradle build
+install: gradle build
+script: gradle build
