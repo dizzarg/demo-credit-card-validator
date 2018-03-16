@@ -1,6 +1,16 @@
-sudo: false
-install: true
 language: java
+
+os:
+  - linux
+
+branches:
+  only:
+    - master
+
+cache:
+  directories:
+  - $HOME/.gradle
+
 jdk:
   - oraclejdk8
 
