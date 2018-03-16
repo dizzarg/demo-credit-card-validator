@@ -8,12 +8,8 @@ branches:
   only:
     - master
 
-cache:
-  directories:
-  - $HOME/.gradle
-
 jdk:
   - oraclejdk8
 
-script:
+install:
   - ./gradlew build
