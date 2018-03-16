@@ -1,15 +1,4 @@
-language: java
-sudo: true
-
-os:
-  - linux
-
-branches:
-  only:
-    - master
-
-jdk:
-  - oraclejdk8
+language: groovy
 
 install:
-  - ./gradlew build
+  - gradle build
