@@ -1,4 +1,5 @@
 language: groovy
 
 install: gradle build
-script: gradle build
+
+after_success: gradle cobertura coveralls
