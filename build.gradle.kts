@@ -11,8 +11,6 @@ plugins {
 	id("net.saliman.cobertura") version "2.3.1"
 }
 
-cobertura.coverageFormats = ["html", "xml"]
-
 version = "0.0.1-SNAPSHOT"
 
 tasks.withType<KotlinCompile> {
