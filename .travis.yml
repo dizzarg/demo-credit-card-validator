@@ -1,7 +1,7 @@
 language: groovy
 
-install: gradle assemble
+install: ./gradlew assemble
 
-script: gradle check
+script: ./gradlew check
 
-after_success: gradle cobertura coveralls
+after_success: ./gradlew cobertura coveralls
