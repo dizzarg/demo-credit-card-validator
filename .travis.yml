@@ -1,5 +1,8 @@
 language: groovy
 
+service_name: travis-pro
+repo_token: 5uRen54fOvg12mRcPFaFtVgGaXFWZe58O
+
 env:
   global:
     - COVERALLS_REPO_TOKEN=5uRen54fOvg12mRcPFaFtVgGaXFWZe58O
@@ -8,4 +11,4 @@ install: ./gradlew assemble
 
 script: ./gradlew check
 
-after_success: ./gradlew pitest coveralls
+after_success: ./gradlew jacocoTestReport coveralls
