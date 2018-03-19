@@ -13,10 +13,6 @@ plugins {
 
 version = "0.0.1-SNAPSHOT"
 
-jacoco {
-
-}
-
 tasks.withType<KotlinCompile> {
 	kotlinOptions {
 		jvmTarget = "1.8"
