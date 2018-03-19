@@ -9,10 +9,15 @@ plugins {
 	id("org.jetbrains.kotlin.plugin.jpa") version kotlinVersion
 	id("io.spring.dependency-management") version "1.0.4.RELEASE"
 	id("com.github.kt3k.coveralls") version "2.8.2"
-	id("net.saliman.cobertura") version "2.3.1"
+	id("info.solidsoft.pitest") version "1.1.11"
 }
 
 version = "0.0.1-SNAPSHOT"
+
+pitest {
+	timestampedReports = false
+	outputFormats = ['XML']
+}
 
 tasks.withType<KotlinCompile> {
 	kotlinOptions {
