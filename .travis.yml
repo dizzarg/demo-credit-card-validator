@@ -1,7 +1,11 @@
 language: groovy
 
+env:
+  global:
+    - COVERALLS_REPO_TOKEN=5uRen54fOvg12mRcPFaFtVgGaXFWZe58O
+
 install: ./gradlew assemble
 
 script: ./gradlew check
 
-after_success: ./gradlew cobertura coveralls
+after_success: ./gradlew jacocoTestReport coveralls
