@@ -2,7 +2,6 @@ import org.jetbrains.kotlin.gradle.tasks.KotlinCompile
 
 plugins {
 	val kotlinVersion = "1.2.21"
-	application
 	idea
 	id("org.springframework.boot") version "2.0.0.RELEASE"
 	id("org.jetbrains.kotlin.jvm") version kotlinVersion
