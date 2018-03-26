@@ -7,7 +7,7 @@ script:
   - ./gradlew check
   - ./gradlew jacocoTestReport
 after_success:
-  - bash <(curl -s https://codecov.io/bash)
+  - bash <(curl -s https://codecov.io/bash) -t ca50779e-55ae-426b-8205-63ce7cb26c71
 
 
 # language: groovy
