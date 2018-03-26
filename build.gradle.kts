@@ -2,6 +2,8 @@ import org.jetbrains.kotlin.gradle.tasks.KotlinCompile
 
 plugins {
 	val kotlinVersion = "1.2.21"
+	application
+	idea
 	id("org.springframework.boot") version "2.0.0.RELEASE"
 	id("org.jetbrains.kotlin.jvm") version kotlinVersion
 	id("org.jetbrains.kotlin.plugin.spring") version kotlinVersion
@@ -22,10 +24,15 @@ tasks.withType<KotlinCompile> {
 
 tasks.withType<JacocoReport> {
 	reports {
-		html.isEnabled = true
 		xml.isEnabled = true
+		xml.destination = File("$buildDir/reports/jacoco/report.xml")
+		html.isEnabled = false
+		csv.isEnabled = false
 	}
+	val jacocoTestReport by tasks
+	jacocoTestReport.dependsOn("test")
 }
+
 
 repositories {
 	mavenCentral()
@@ -38,3 +45,5 @@ dependencies {
 	compile("com.fasterxml.jackson.module:jackson-module-kotlin")
 	testCompile("org.springframework.boot:spring-boot-starter-test")
 }
+
+inline fun <reified T : Task> task(noinline configuration: T.() -> Unit) = tasks.creating(T::class, configuration)
