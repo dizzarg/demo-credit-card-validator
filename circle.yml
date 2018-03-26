@@ -18,9 +18,9 @@ general:
     - build/libs
 
 
-dependencies:
-  override:
-    - ./gradlew resolveConfigurations
+#dependencies:
+#  override:
+#    - ./gradlew resolveConfigurations
 
 test:
   override:
