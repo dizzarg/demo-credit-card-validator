@@ -4,24 +4,7 @@ jdk:
 before_script:
   - chmod +x gradlew
 script:
-  - ./gradlew assemble
   - ./gradlew check
   - ./gradlew jacocoTestReport
 after_success:
   - bash <(curl -s https://codecov.io/bash) -t ca50779e-55ae-426b-8205-63ce7cb26c71
-
-
-# language: groovy
-
-# service_name: travis-pro
-# repo_token: 5uRen54fOvg12mRcPFaFtVgGaXFWZe58O
-
-# env:
-#  global:
-#    - COVERALLS_REPO_TOKEN=5uRen54fOvg12mRcPFaFtVgGaXFWZe58O
-
-# install: ./gradlew assemble
-
-# script: ./gradlew check
-
-# after_success: ./gradlew jacocoTestReport coveralls
